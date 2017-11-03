@@ -2,15 +2,14 @@
 <html>
 <head>
 	<title></title>
+	<style type="text/css">
+		
+		.is-loading { background: red; }
+	</style>
 </head>
 <body>
 	<div id="root">
-		<ul>
-			<li v-for="name in names" v-text="name"></li>
-		</ul>
-
-		<input id="input" type="text" v-model="newName"/>
-		<button @click="addName">Add Name</button>
+		<button :class="{ 'is-loading': isLoading }"  @click="toggleClass">Click Me</button>
 	</div>
 
 
@@ -22,23 +21,13 @@
 			el: '#root',
 			data: {
 				
-				names: ['joe', 'jain', 'foo'],
-				newName: ''
+				isLoading: false
 			},
 			methods: {
-				addName() {
-					this.names.push(this.newName);
-					this.newName = '';
+				toggleClass() {
+					this.isLoading = !this.isLoading;
 				}
-			},
-			// mounted() {
-			// 	document.querySelector('#button').addEventListener('click', () => {
-			// 		let name = document.querySelector('#input');
-			// 		app.names.push(name.value);
-
-			// 		name.value = '';
-			// 	});
-			// }
+			}
 		});
 
 
