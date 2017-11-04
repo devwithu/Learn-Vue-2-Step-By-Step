@@ -3,7 +3,7 @@ Vue.component('task', {
 });
 
 Vue.component('task-list', {
-	template: `
+	template: ` 
 				<div>
 				    <task v-for="task in tasks">{{ task.task }}</task>
 				</div>
