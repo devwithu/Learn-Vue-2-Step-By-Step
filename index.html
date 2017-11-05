@@ -3,24 +3,15 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+	<style type="text/css">
+		body { padding-top: 40px; }
+	</style>
 
 </head>
 <body>
 	<div id="root" class="container">
-		<tabs>
-			<tab name="About Us" :selected="true">
-				<h1>Here is the content for the About</h1>
-			</tab>
-			<tab name="About Our Culture" >
-				<h1>Here is the content for the Culture</h1>
-			</tab>
-			
-			<tab name="About OUr vision" >
-				<h1>Here is the content for the vision</h1>
-			</tab>
-		</tabs>
-
-
+		<coupon @applied="onCouponApplied"></coupon>
+		<h1 v-if="couponApplied"> You used coupon</h1>
 	</div>
 
 
