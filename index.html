@@ -7,11 +7,19 @@
 </head>
 <body>
 	<div id="root" class="container">
-		<modal v-if="showModal" @close="showModal=false">
-			<p>We insert any text here.</p>
-		</modal>
+		<tabs>
+			<tab name="About Us" :selected="true">
+				<h1>Here is the content for the About</h1>
+			</tab>
+			<tab name="About Our Culture" >
+				<h1>Here is the content for the Culture</h1>
+			</tab>
+			
+			<tab name="About OUr vision" >
+				<h1>Here is the content for the vision</h1>
+			</tab>
+		</tabs>
 
-		<button @click="showModal=true">Show MOdal</button>
 
 	</div>
 
