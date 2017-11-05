@@ -7,10 +7,11 @@
 </head>
 <body>
 	<div id="root" class="container">
-		<message title="Hello World" body="Lorem ipsom dloar sit amet."></message>
-		<message title="sgsg wt ew" body="dgdg dg  d dh  dh dh ."></message>
+		<modal v-if="showModal" @close="showModal=false">
+			<p>We insert any text here.</p>
+		</modal>
 
-
+		<button @click="showModal=true">Show MOdal</button>
 
 	</div>
 
