@@ -9,16 +9,12 @@
 
     </head>
     <body>
-        <div id="one">
-            <div>
-                @{{ shared.user.name }}
-            </div>
+        <div id="app">
+            {{-- <input type="text" v-model="coupon" /> --}}
+            {{-- <input type="text" :value="coupon" @input = $event.target.value"> --}}
+            <coupon v-model="coupon" />
         </div>
-        <div id="two">
-            <div>
-                @{{ shared.user.name }}
-            </div>
-        </div>
+
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
         <script src="js/app.js"></script>
