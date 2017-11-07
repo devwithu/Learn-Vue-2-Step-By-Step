@@ -9,11 +9,15 @@
 
     </head>
     <body>
-        <div id="app">
-            <ul>
-                <li v-for="skill in skills" v-text="skill"></li>
-            </ul>
-            
+        <div id="one">
+            <div>
+                @{{ shared.user.name }}
+            </div>
+        </div>
+        <div id="two">
+            <div>
+                @{{ shared.user.name }}
+            </div>
         </div>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
