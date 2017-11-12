@@ -9,23 +9,26 @@
                         </p>
                         <p>
                             {{ status.created_at | ago | capitalize }}
-                        </p>
-                    </div>
+                        </p> 
+                    </div> 
 
-                    <div class="message-body" v-text="status.body">
-                        I'm an example component!
-                    </div>
+                    <div class="message-body" v-text="status.body"></div>
                 </div>
-            </div>
+                <add-to-stream @completed="addStatus"></add-to-stream>
+            </div> 
         </div>  
     </div>
-</template>
+</template>   
 
 <script>
     import moment from 'moment';
-    import Status from '../models/Status';
+    import Status from '../models/Status'; 
+    import AddToStream from '../components/AddToStream.vue';  
 
     export default {
+        components: { 
+            AddToStream 
+        },
         data() {
             return {
                 statuses: []
@@ -49,8 +52,10 @@
         },
 
         methods: {
-            postedOn(status) {
-                return moment(status.created_at).fromNow();
+            addStatus(status) {
+                this.statuses.unshift(status);
+
+                window.scrollTo(0,0);
             }
         }
     }
