@@ -8,7 +8,7 @@
                             {{ status.user.name }} said ...
                         </p>
                         <p>
-                            {{ postedOn(status) }}
+                            {{ status.created_at | ago | capitalize }}
                         </p>
                     </div>
 
@@ -29,6 +29,14 @@
         data() {
             return {
                 statuses: []
+            }
+        },
+        filters: {
+            ago(data) {
+                return moment(data).fromNow();
+            },
+            capitalize(value) {
+                return value.toUpperCase();
             }
         },
         created() {
